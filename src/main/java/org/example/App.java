@@ -1,5 +1,8 @@
 package org.example;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -10,10 +13,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.file.Files;
+
+
+
 
 public class App extends Application {
 
@@ -34,6 +38,9 @@ public class App extends Application {
 
         String myText = readMyText();
         drawText(gc, myText);
+
+        readWTFJson("god.json");
+        // rendering:
 
         root.getChildren().add(canvas);
         primaryStage.setScene(new Scene(root));
@@ -106,6 +113,37 @@ public class App extends Application {
 
         return fileAsString;
     }
+
+
+
+    void readWTFJson(String fname){
+
+        String file = "";
+        //was: File tempFile = new File(getClass().getClassLoader().getResource("cards/god.json").getFile());
+        File tempFile = new File(getClass().getClassLoader().getResource(fname).getFile());
+        try {
+            file = new String(Files.readAllBytes(tempFile.toPath()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        Gson gson = new Gson();
+        JsonArray jsonArray = gson.fromJson( file, JsonArray.class);
+
+        for(int i = 0 ; i< jsonArray.size() ; i++) {
+
+            //was: godsInGame.add(new Card(jsonArray.get(i).getAsJsonObject().get("name").getAsString(),jsonArray.get(i).getAsJsonObject().get("description").getAsString()));
+            JsonObject o = jsonArray.get(i).getAsJsonObject();
+            String s1 = o.get("name").getAsString();
+            String s2 = o.get("description").getAsString();
+            System.out.println(s1 + " : " + s2);
+
+        }
+
+
+    }
+
 
 
 }
