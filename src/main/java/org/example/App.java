@@ -1,5 +1,7 @@
-package org.example;
+//https://github.com/ingconti/JavaFXWithImagesAndText
 
+
+package org.example;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -15,15 +17,19 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.nio.file.Files;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class App extends Application {
 
     public static void main(String[] args) {
+        VeryLongThread veryLongThread = new VeryLongThread(players);
+        veryLongThread.start();
         launch(args);
     }
+
+    static List<String> players = new ArrayList<String>();
 
     @Override
     public void start(Stage primaryStage) {
