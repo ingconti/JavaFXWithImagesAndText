@@ -2,15 +2,20 @@
 
 
 package org.example;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
@@ -18,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -33,13 +39,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         primaryStage.setTitle("Drawing Operations Test");
         Group root = new Group();
         Canvas canvas = new Canvas(300, 250);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         //drawShapes(gc);
-
         drawCards(gc);
 
         String myText = readMyText();
@@ -49,6 +55,9 @@ public class App extends Application {
         // rendering:
 
         root.getChildren().add(canvas);
+
+        addButtonTo(root);
+
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
@@ -59,6 +68,29 @@ public class App extends Application {
                 new Image("full_0000s_0000_god_and_hero_cards_0056_scylla.png");
         gc.drawImage(img, 20, 20, 100, 100);
     }
+
+
+
+    private  void addButtonTo(Group root){
+
+        //button:
+        Button b = new Button("button");
+        EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e)
+            {
+                System.out.println("BTN! " + new Date());
+            }
+        };
+        // when button is pressed
+        b.setOnAction(event);
+
+        // create a stack pane
+        TilePane r = new TilePane();
+        root.getChildren().add(b);
+        /// end of button
+
+    }
+
 
 
     private void drawShapes(GraphicsContext gc) {
