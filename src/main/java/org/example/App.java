@@ -51,7 +51,7 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
-        readWTFJson("god.json");
+        //readWTFJson("god.json");
         // rendering:
 
         root.getChildren().add(canvas);
