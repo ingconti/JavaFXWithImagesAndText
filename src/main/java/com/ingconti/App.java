@@ -21,6 +21,7 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,9 +52,9 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
-        //readWTFJson("god.json");
-        // rendering:
+        readWTFJson("god.json");
 
+        // rendering:
         root.getChildren().add(canvas);
 
         addButtonTo(root);
@@ -157,8 +158,10 @@ public class App extends Application {
     void readWTFJson(String fname){
 
         String file = "";
-        //was: File tempFile = new File(getClass().getClassLoader().getResource("cards/god.json").getFile());
-        File tempFile = new File(getClass().getClassLoader().getResource(fname).getFile());
+        //was: File tempFile = new File(getClass().getClassLoader().getResource(fname).getFile());
+       
+        URL fullPath = getClass().getClassLoader().getResource(fname);
+        File tempFile = new File(fullPath.getFile());
         try {
             file = new String(Files.readAllBytes(tempFile.toPath()));
         } catch (IOException e) {
