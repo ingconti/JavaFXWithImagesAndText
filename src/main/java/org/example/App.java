@@ -1,7 +1,7 @@
 //https://github.com/ingconti/JavaFXWithImagesAndText
 
 
-package org.example;
+package com.ingconti;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
