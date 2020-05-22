@@ -31,9 +31,16 @@ import java.util.List;
 public class App extends Application {
 
     public static void main(String[] args) {
+
         VeryLongThread veryLongThread = new VeryLongThread(players);
         veryLongThread.start();
-        launch(args);
+
+        // trivial.. if no cmd paran start in graphics.. only to show.
+        if (args.length>0){
+            System.out.println("CLI\n");
+        }else{
+            launch(args);
+        }
     }
 
     static List<String> players = new ArrayList<String>();
@@ -52,7 +59,7 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
-        readWTFJson("god.json");
+        //readWTFJson("god.json");
 
         // rendering:
         root.getChildren().add(canvas);
