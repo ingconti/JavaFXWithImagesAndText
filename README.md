@@ -3,7 +3,7 @@
 how to to use POM to build JAR
 
 
-1) in POM add: (in pulg in section)
+1) in POM add: (in plug-in section)
 
 
   <!-- added

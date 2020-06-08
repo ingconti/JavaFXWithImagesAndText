@@ -35,7 +35,7 @@ public class App extends Application {
         VeryLongThread veryLongThread = new VeryLongThread(players);
         veryLongThread.start();
 
-        // trivial.. if no cmd paran start in graphics.. only to show.
+        // trivial.. if no cmd param start in graphics.. only to show.
         if (args.length>0){
             System.out.println("CLI\n");
         }else{
