@@ -38,9 +38,13 @@ how to to use POM to build JAR
            -->
         
         
-        
- 2) pack it using MAVEN cmd in right Maven panel:
+ 
+ 2) be sure to use YOUR main class:
+  <mainClass>com.ingconti.Launcher</mainClass>
+  
+ 3) pack it using MAVEN cmd in right Maven panel:
  
  mvn package
+ 
  
  
