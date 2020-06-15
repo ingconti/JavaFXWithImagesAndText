@@ -39,7 +39,7 @@ how to to use POM to build JAR
         
         
         
- 2) pakc it using MAVEN cmd in right Maven panen:
+ 2) pack it using MAVEN cmd in right Maven panel:
  
  mvn package
  
