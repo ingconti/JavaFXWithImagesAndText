@@ -44,7 +44,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.1</version>
                 <configuration>
-                    <mainClass>com.ingconti.App</mainClass>
+                    <mainClass>com.ingconti.Launcher</mainClass>
                 </configuration>
             </plugin>
 

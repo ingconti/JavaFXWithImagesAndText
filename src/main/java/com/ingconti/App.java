@@ -59,6 +59,8 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
+        JsonArray J = readMyJSONAsText("god.json");
+
         //readWTFJson("god.json");
 
         // rendering:
@@ -161,13 +163,48 @@ public class App extends Application {
     }
 
 
+    JsonArray readMyJSONAsText(String fname) {
+
+        InputStream is = null;
+        is = this.getClass().getClassLoader().getResourceAsStream(fname);
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+
+        String line = null;
+        try {
+            line = buf.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        StringBuilder sb = new StringBuilder();
+
+        while (line != null) {
+            sb.append(line).append("\n");
+            try {
+                line = buf.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        String fileAsString = sb.toString();
+        System.out.println("Contents : " + fileAsString);
+
+        Gson gson = new Gson();
+        JsonArray jsonArray = gson.fromJson( fileAsString, JsonArray.class);
+
+        return jsonArray;
+    }
+
+
 
     void readWTFJson(String fname){
 
         String file = "";
         //was: File tempFile = new File(getClass().getClassLoader().getResource(fname).getFile());
-       
-        URL fullPath = getClass().getClassLoader().getResource(fname);
+
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream(fname);
+
+        URL fullPath = this.getClass().getClassLoader().getResource(fname);
         File tempFile = new File(fullPath.getFile());
         try {
             file = new String(Files.readAllBytes(tempFile.toPath()));
