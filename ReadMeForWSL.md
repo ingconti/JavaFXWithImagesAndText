@@ -47,14 +47,11 @@ After that everything is ready to play without any problem Santorini.
 
 ### Useful links
  [Thread with possible solutions to  some configuration problems](https://github.com/microsoft/WSL/issues/4106)
+ 
  [StackOverlow page with advanced settings in WSL bashrc file for X11  ](https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2/61110604#61110604)
  
 [Guide used as reference  ](https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/)
-
-
-Thnaks to:
-
-Michael Hirsch, Ph.D.
+Thnaks to: Michael Hirsch, Ph.D.
 
 
 
