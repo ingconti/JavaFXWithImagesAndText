@@ -1,4 +1,4 @@
-# Use Santorini with GUI in WSL using X11 Desktop
+# Use Java FX with GUI in WSL using X11 Desktop
  
 By default  Windows Subsystem for Linux doesn't allow to run graphical interface, it's necessary to install a compatible Windows XServer and abilitate some ports on Windows Defender.
 
