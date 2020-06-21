@@ -30,6 +30,7 @@ It's necessary that VcXsrv is started before opening the WSL terminal to avoid g
 
 In the first selection if you choose " Multiple Windows"  the game will start in **fullscreen without any button to exit the game**, until it is finished. If you choose "One Large Window", at the end of VcXsrv'setup will appear a **black  window  with borders**  in wich will appear the game when it will start.  Leave the default value in "Display number".
 ![enter image description here](https://cdn.discordapp.com/attachments/698582941235806270/724193051068858408/unknown.png)
+
 After that choose the following settings:
 
 ![enter image description here](https://cdn.discordapp.com/attachments/698582941235806270/724203269395578950/unknown.png)
