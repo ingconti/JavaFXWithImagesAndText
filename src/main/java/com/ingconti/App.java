@@ -1,6 +1,7 @@
 //https://github.com/ingconti/JavaFXWithImagesAndText
 
 
+
 package com.ingconti;
 
 import com.google.gson.Gson;
@@ -200,7 +201,6 @@ public class App extends Application {
     void readWTFJson(String fname){
 
         String file = "";
-        //was: File tempFile = new File(getClass().getClassLoader().getResource(fname).getFile());
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream(fname);
 
