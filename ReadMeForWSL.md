@@ -52,6 +52,9 @@ After that everything is ready to play without any problem Santorini.
 [Guide used as reference  ](https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/)
 
 
+Thnaks to:
+
+Michael Hirsch, Ph.D.
 
 
 
