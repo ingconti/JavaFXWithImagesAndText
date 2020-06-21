@@ -35,7 +35,9 @@ After that choose the following settings:
 
 ![enter image description here](https://cdn.discordapp.com/attachments/698582941235806270/724203269395578950/unknown.png)
 ![enter image description here](https://cdn.discordapp.com/attachments/698582941235806270/724203339813748746/unknown.png)
-After that an icon will appear in the TaskBar. It means that everything is working correctly.
+
+An icon will appear in the TaskBar. It means that everything is working correctly.
+
 ### Windows defender Settings 
 Even if VcXsrv starts correctly, we must enable its Inbound Rules  in Windows Defender.
 You need to go in  Windows Defender Firewall -> Advanced Settings -> Inbound Rules and check if all Rules named `VcXsrv windows xserver` are active.
@@ -46,6 +48,7 @@ After that everything is ready to play without any problem Santorini.
 ### Useful links
  [Thread with possible solutions to  some configuration problems](https://github.com/microsoft/WSL/issues/4106)
  [StackOverlow page with advanced settings in WSL bashrc file for X11  ](https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2/61110604#61110604)
+ 
 [Guide used as reference  ](https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/)
 
 
