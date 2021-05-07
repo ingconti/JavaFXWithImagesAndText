@@ -15,15 +15,15 @@ public class VeryLongThread extends Thread {
     public void run() {
         System.out.println("VeryLongThread is running...");
 
-        while (true) {
+        do {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 //e.printStackTrace();
             }
             int tot = players.size();
-            System.out.println("players logged til now "  +  tot);
-        }
+            System.out.println("players logged til now " + tot);
+        } while (true);
     }
 }
 

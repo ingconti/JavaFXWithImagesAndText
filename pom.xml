@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>11.0.2</version>
+            <version>13</version>
         </dependency>
 
 
@@ -39,17 +39,17 @@
                     <release>11</release>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.1</version>
+                <version>0.0.4</version>
                 <configuration>
                     <mainClass>com.ingconti.Launcher</mainClass>
                 </configuration>
             </plugin>
 
-            <!-- added
-            -->
+            <!-- added -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -76,8 +76,7 @@
                 </executions>
             </plugin>
 
-            <!-- end of added
-           -->
+            <!-- end of added -->
         </plugins>
     </build>
 </project>
