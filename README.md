@@ -5,9 +5,7 @@ how to to use POM to build JAR
 
 1) in POM add: (in plug-in section)
 
-
-  <!-- added
-            -->
+  <!-- added -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -37,7 +35,7 @@ how to to use POM to build JAR
             <!-- end of added
            -->
         
-        
+
  
  2) be sure to use YOUR main class:
   <mainClass>com.ingconti.Launcher</mainClass>
@@ -45,6 +43,13 @@ how to to use POM to build JAR
  3) pack it using MAVEN cmd in right Maven panel:
  
  mvn package
- 
- 
+
+4) 
+
+DO NOT run Java JAR in "red" folder, 
+(error: "no main manifest attribute, in ...../target/JavaFXWithImages-1.0-SNAPSHOT.jar"")
+
+RUN Java in "shade" YELLOW folder.
+
+
  
