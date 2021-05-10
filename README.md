@@ -42,7 +42,7 @@ how to to use POM to build JAR
   
  3) do NOT try skip out Laucher class! it must be used to foce loading of inner class derived from:
     javafx.application.Application;
-    
+    (for brave an curious.. here that's why: http://mail.openjdk.java.net/pipermail/openjfx-dev/2018-June/021977.html)
  4) pack it using MAVEN cmd in right Maven panel:
  
  mvn package
