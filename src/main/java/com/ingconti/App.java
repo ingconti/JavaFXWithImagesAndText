@@ -60,9 +60,9 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
-        JsonArray J = readMyJSONAsText("godsgods.json");
+        JsonArray J = readMyJSONAsText("gods.json");
 
-        //readWTFJson("godgods.json");
+        //readWTFJson("gods.json");
 
         // rendering:
         root.getChildren().add(canvas);
