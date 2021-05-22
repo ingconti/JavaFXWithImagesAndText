@@ -134,6 +134,7 @@ public class App extends Application {
 
     }
 
+
     String readMyText() {
 
         InputStream is = null;
