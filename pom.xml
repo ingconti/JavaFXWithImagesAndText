@@ -49,7 +49,7 @@
                 </configuration>
             </plugin>
 
-            <!-- added -->
+            <!-- added SHADE plug in -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
