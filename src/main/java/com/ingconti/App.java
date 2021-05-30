@@ -6,6 +6,7 @@ package com.ingconti;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -60,9 +61,10 @@ public class App extends Application {
         String myText = readMyText();
         drawText(gc, myText);
 
-        JsonArray J = readMyJSONAsText("gods.json");
-
-        //readWTFJson("gods.json");
+        God[] gods = readMyJSONAsText("gods.json");
+        for (God g : gods) {
+            System.out.println(g.toString());
+        }
 
         // rendering:
         root.getChildren().add(canvas);
@@ -165,7 +167,14 @@ public class App extends Application {
     }
 
 
-    JsonArray readMyJSONAsText(String fname) {
+
+
+
+    // NOTE: java cannot read easily mulitpel lines..
+    // see also at:
+    // https://stackoverflow.com/questions/309424/how-do-i-read-convert-an-inputstream-into-a-string-in-java
+    // a painful mess of ther same code with for...
+    God[] readMyJSONAsText(String fname) {
 
         InputStream is = null;
         is = this.getClass().getClassLoader().getResourceAsStream(fname);
@@ -189,46 +198,16 @@ public class App extends Application {
         }
 
         String fileAsString = sb.toString();
-        System.out.println("Contents : " + fileAsString);
+        // eventually.. System.out.println("Contents : " + fileAsString);
 
         Gson gson = new Gson();
-        JsonArray jsonArray = gson.fromJson( fileAsString, JsonArray.class);
+        God[] gods = gson.fromJson( fileAsString, God[].class);
 
-        return jsonArray;
+        return gods;
     }
 
 
 
-    void readWTFJson(String fname){
-
-        String file = "";
-
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream(fname);
-
-        URL fullPath = this.getClass().getClassLoader().getResource(fname);
-        File tempFile = new File(fullPath.getFile());
-        try {
-            file = new String(Files.readAllBytes(tempFile.toPath()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        Gson gson = new Gson();
-        JsonArray jsonArray = gson.fromJson( file, JsonArray.class);
-
-        for(int i = 0 ; i< jsonArray.size() ; i++) {
-
-            //was: godsInGame.add(new Card(jsonArray.get(i).getAsJsonObject().get("name").getAsString(),jsonArray.get(i).getAsJsonObject().get("description").getAsString()));
-            JsonObject o = jsonArray.get(i).getAsJsonObject();
-            String s1 = o.get("name").getAsString();
-            String s2 = o.get("description").getAsString();
-            System.out.println(s1 + " : " + s2);
-
-        }
-
-
-    }
 
 
 
