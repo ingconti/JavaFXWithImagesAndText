@@ -139,8 +139,10 @@ public class App extends Application {
 
     String readMyText() {
 
+        String fname = "sample_file.txt";
+
         InputStream is = null;
-        is = this.getClass().getClassLoader().getResourceAsStream("sample_file.txt");
+        is = this.getClass().getClassLoader().getResourceAsStream(fname);
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
 
         String line = null;
@@ -161,7 +163,7 @@ public class App extends Application {
         }
 
         String fileAsString = sb.toString();
-        System.out.println("Contents : " + fileAsString);
+        System.out.println("Contents of: "  + fname +  "\n" + fileAsString);
 
         return fileAsString;
     }
