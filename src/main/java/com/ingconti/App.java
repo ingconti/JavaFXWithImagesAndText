@@ -9,6 +9,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -54,6 +55,10 @@ public class App extends Application {
         Group root = new Group();
         Canvas canvas = new Canvas(300, 250);
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        //enable it if You want to close backgroud stuff when closing window
+        //this makes all stages close and the app exit when the main stage is closed
+        primaryStage.setOnCloseRequest(e -> Platform.exit());
 
         //drawShapes(gc);
         drawCards(gc);

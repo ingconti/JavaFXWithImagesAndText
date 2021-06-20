@@ -14,6 +14,8 @@ public class VeryLongThread extends Thread {
 
     public void run() {
         System.out.println("VeryLongThread is running...");
+        int maxIterations = 20;
+        int count = 0;
 
         do {
             try {
@@ -23,7 +25,10 @@ public class VeryLongThread extends Thread {
             }
             int tot = players.size();
             System.out.println("players logged til now " + tot);
-        } while (true);
+        } while (count++<maxIterations);
+
+        System.out.println("VeryLongThread has done!");
+
     }
 }
 
