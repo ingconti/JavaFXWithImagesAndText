@@ -178,7 +178,7 @@ public class App extends Application {
 
 
 
-    // NOTE: java cannot read easily mulitpel lines..
+    // NOTE: java cannot read easily mulitple lines..
     // see also at:
     // https://stackoverflow.com/questions/309424/how-do-i-read-convert-an-inputstream-into-a-string-in-java
     // a painful mess of ther same code with for...
