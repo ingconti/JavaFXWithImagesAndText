@@ -56,7 +56,7 @@ public class App extends Application {
         Canvas canvas = new Canvas(300, 250);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        //enable it if You want to close backgroud stuff when closing window
+        //enable it if You want to close background stuff when closing window
         // see long runnign thread. If it runs, appp si alive.
         //this makes all stages close and the app exit when the main stage is closed
         primaryStage.setOnCloseRequest(e -> Platform.exit());
