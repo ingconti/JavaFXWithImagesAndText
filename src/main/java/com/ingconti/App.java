@@ -5,9 +5,6 @@
 package com.ingconti;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -147,7 +144,7 @@ public class App extends Application {
 
         String fname = "sample_file.txt";
 
-        InputStream is = null;
+        InputStream is;
         is = this.getClass().getClassLoader().getResourceAsStream(fname);
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
 
@@ -184,7 +181,7 @@ public class App extends Application {
     // a painful mess of ther same code with for...
     God[] readMyJSONAsText(String fname) {
 
-        InputStream is = null;
+        InputStream is;
         is = this.getClass().getClassLoader().getResourceAsStream(fname);
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
 
