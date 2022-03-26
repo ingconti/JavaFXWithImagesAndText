@@ -14,7 +14,7 @@
 
     <dependencies>
 
-
+        <!-- javaFX for M1 -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx</artifactId>
@@ -22,21 +22,20 @@
             <type>pom</type>
         </dependency>
 
-
-        <!-- javaFX for M1 -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>18</version>
         </dependency>
-        <!-- end of javaFX for M1 -->
-
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>18</version>
         </dependency>
+
+        <!-- end of javaFX for M1 -->
+
 
         <!-- junit 5 -->
 
