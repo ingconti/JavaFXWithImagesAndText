@@ -38,6 +38,7 @@ how to to use POM to build JAR
 
  
  2) be sure to use YOUR main class:
+    mine is:
   <mainClass>com.ingconti.Launcher</mainClass>
   
  3) do NOT try skip out Laucher class! it must be used to force loading of inner class derived from:
@@ -55,3 +56,6 @@ DO NOT run Java JAR in "red" folder,
 (error: "no main manifest attribute, in ...../target/JavaFXWithImages-1.0-SNAPSHOT.jar"")
 
 RUN Java in "shade" YELLOW folder.
+
+
+6) to run inside IJ, choose com.ingconti.Launcher as main class in "Configuration"

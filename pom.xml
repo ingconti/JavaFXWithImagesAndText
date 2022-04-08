@@ -7,8 +7,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
 
@@ -38,7 +38,6 @@
 
 
         <!-- junit 5 -->
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -46,6 +45,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- jGson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -75,8 +75,13 @@
                 </configuration>
             </plugin>
 
-            <!-- added SHADE plug in -->
+            <!-- added for Maven testing -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
 
+            <!-- added SHADE plug in -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -103,7 +108,8 @@
                 </executions>
             </plugin>
 
-            <!-- end of added -->
+            <!-- end of added for SHADE -->
+
 
         </plugins>
     </build>
