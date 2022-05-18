@@ -135,38 +135,14 @@ public class App extends Application {
 
 
     void drawText(GraphicsContext gc, String text) {
-
         gc.strokeText(text, 150, 100);
-
     }
 
 
     String readMyText() {
 
         String fname = "sample_file.txt";
-
-        InputStream is;
-        is = this.getClass().getClassLoader().getResourceAsStream(fname);
-        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
-
-        String line = null;
-        try {
-            line = buf.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        StringBuilder sb = new StringBuilder();
-
-        while (line != null) {
-            sb.append(line).append("\n");
-            try {
-                line = buf.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        String fileAsString = sb.toString();
+        String fileAsString = readTextFrom(fname);
         System.out.println("Contents of: "  + fname +  "\n" + fileAsString);
 
         return fileAsString;
@@ -182,34 +158,37 @@ public class App extends Application {
     // a painful mess of ther same code with for...
     God[] readMyJSONAsText(String fname) {
 
-        InputStream is;
-        is = this.getClass().getClassLoader().getResourceAsStream(fname);
-        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
-
-        String line = null;
-        try {
-            line = buf.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        StringBuilder sb = new StringBuilder();
-
-        while (line != null) {
-            sb.append(line).append("\n");
-            try {
-                line = buf.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        String fileAsString = sb.toString();
-        // eventually.. System.out.println("Contents : " + fileAsString);
+        String fileAsString = readTextFrom(fname);
 
         Gson gson = new Gson();
         God[] gods = gson.fromJson( fileAsString, God[].class);
 
         return gods;
+    }
+
+
+    String readTextFrom(String fname) {
+
+        InputStream is;
+        is = this.getClass().getClassLoader().getResourceAsStream(fname);
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+
+        String fileAsString = "";
+
+        String line = null;
+
+        while (true) {
+            try {
+                line = buf.readLine();
+                if (line == null)
+                    break;
+                fileAsString+=line+"\n";
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return fileAsString;
     }
 
 
