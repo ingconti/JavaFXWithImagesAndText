@@ -1,6 +1,6 @@
 # JavaFXWithImagesAndText
 
-how to to use POM to build JAR
+#How to to use POM to build JAR
 
 
 1) in POM add: (in plug-in section)
@@ -59,3 +59,32 @@ RUN Java in "shade" YELLOW folder.
 
 
 6) to run inside IJ, choose com.ingconti.Launcher as main class in "Configuration"
+
+
+#==== JAVA FX SUPPORT
+
+
+
+add:
+
+    <!-- javaFX for M1 -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx</artifactId>
+            <version>18.0.1</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>18.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>18.0.1</version>
+        </dependency>
+
+        <!-- end of javaFX for M1 -->
