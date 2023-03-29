@@ -67,24 +67,32 @@ RUN Java in "shade" YELLOW folder.
 
 add:
 
-    <!-- javaFX for M1 -->
+        <!-- javaFX for M1 -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
             <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.2</version>
+        </dependency>
+
 
         <!-- end of javaFX for M1 -->
