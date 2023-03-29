@@ -18,24 +18,31 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
             <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>18.0.1</version>
+            <version>19</version>
         </dependency>
 
-        <!-- end of javaFX for M1 -->
 
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.2</version>
+        </dependency>
+
+
+        <!-- end of javaFX for M1 -->
 
         <!-- junit 5 -->
         <dependency>
@@ -57,12 +64,14 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>11</release>
+                    <release>19</release>
+                    <release>19</release>
                 </configuration>
             </plugin>
 
@@ -75,18 +84,13 @@
                 </configuration>
             </plugin>
 
-            <!-- added for Maven testing -->
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-            </plugin>
 
             <!-- added SHADE plug in -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.0</version>
-                
+
                 <executions>
                     <execution>
                         <phase>package</phase>
