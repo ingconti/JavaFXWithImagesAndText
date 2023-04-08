@@ -96,3 +96,20 @@ add:
 
 
         <!-- end of javaFX for M1 -->
+
+
+#How use JSON Parser:
+
+1) add in POM:
+
+    <!-- jGson-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+
+2) see code in God AND in tests.
+
+
