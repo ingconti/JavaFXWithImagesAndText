@@ -57,12 +57,19 @@ DO NOT run Java JAR in "red" folder,
 
 RUN Java in "shade" YELLOW folder.
 
+for cmd line:
+cd /Users/ingconti/IdeaProjects/JavaFXWithImagesAndText/shade
+java -jar JavaFXWithImages.jar
 
 6) to run inside IJ, choose com.ingconti.Launcher as main class in "Configuration"
 
+If You get:
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @4d088d11'
+
+don't panic. it's ok.
+
 
 #==== JAVA FX SUPPORT
-
 
 
 add:
