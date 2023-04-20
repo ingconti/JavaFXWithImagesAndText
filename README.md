@@ -1,11 +1,11 @@
 # JavaFXWithImagesAndText
 
-#How to to use POM to build JAR
+#How to use POM to build JAR
 
 
 1) in POM add: (in plug-in section)
 
-  <!-- added -->
+    <!-- added -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -38,27 +38,25 @@
  
  2) be sure to use YOUR main class:
     mine is:
-  <mainClass>com.ingconti.Launcher</mainClass>
+    <mainClass>com.ingconti.Launcher</mainClass>
   
  3) do NOT try skip out Laucher class! it must be used to force loading of inner class derived from:
     javafx.application.Application.
 
-    (for brave and curious.. here that's why: http://mail.openjdk.java.net/pipermail/openjfx-dev/2018-June/021977.html)
+    (for brave and curious... here that's why: http://mail.openjdk.java.net/pipermail/openjfx-dev/2018-June/021977.html)
 
  4) pack it using MAVEN cmd in right Maven panel:
  
- mvn package
+    mvn package
 
-5) 
+5) DO NOT run Java JAR in "red" folder, 
+  (error: "no main manifest attribute, in ...../target/JavaFXWithImages-1.0-SNAPSHOT.jar"")
 
-DO NOT run Java JAR in "red" folder, 
-(error: "no main manifest attribute, in ...../target/JavaFXWithImages-1.0-SNAPSHOT.jar"")
+  RUN Java in "shade" YELLOW folder.
 
-RUN Java in "shade" YELLOW folder.
-
-for cmd line:
-cd /Users/ingconti/IdeaProjects/JavaFXWithImagesAndText/shade
-java -jar JavaFXWithImages.jar
+  for cmd line:
+  cd /Users/ingconti/IdeaProjects/JavaFXWithImagesAndText/shade
+  java -jar JavaFXWithImages.jar
 
 6) to run inside IJ, choose com.ingconti.Launcher as main class in "Configuration"
 
@@ -106,7 +104,7 @@ add:
 
 #How use JSON Parser:
 
-1) add in POM:
+I) add in POM:
 
     <!-- jGson-->
         <dependency>
@@ -116,6 +114,6 @@ add:
         </dependency>
 
 
-2) see code in God AND in tests.
+II) See code in God AND in tests.
 
 
