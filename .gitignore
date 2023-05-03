@@ -1,3 +1,4 @@
 # Project exclude paths
 /target/
 /shade/JavaFXWithImages.jar
+/.idea
